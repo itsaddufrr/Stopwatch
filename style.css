@@ -1,0 +1,116 @@
+/* Global Background Gradient */
+body {
+  background: linear-gradient(to right, black, #d3d6de);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+}
+
+/* Colorful Text for h1 */
+h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 80px;  /* Default font size */
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  color: transparent;
+  background-image: linear-gradient(45deg, #ff0066, #ffcc00, #33ccff, #ff33cc);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+/* Keyframes for Gradient Animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Stopwatch Display */
+#MyClockDisplay {
+  transition: transform 0.5s ease-out;
+  letter-spacing: 7px;
+  font-size: 60px; /* Default font size */
+  text-align: center;
+  padding: 10px;
+  color: #17D4FE;
+  font-family: Orbitron, sans-serif;
+  border: 2px dashed yellow;
+  border-radius: 20px;
+  width: 45%;
+  margin: auto;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+}
+
+/* Media query for mobile devices */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 40px; /* Reduced font size for small screens */
+  }
+
+  #MyClockDisplay {
+    font-size: 40px; /* Adjusted font size for smaller screens */
+    width: 80%; /* Make it wider to fit on smaller screens */
+    padding: 5px; /* Reduce padding for smaller screens */
+  }
+
+  /* Optional: Adjust button sizes for mobile screens */
+  #buttonContainer button {
+    font-size: 16px; /* Slightly smaller button text for mobile */
+    padding: 10px 20px; /* Adjust padding for better fit */
+  }
+}
+
+/* Keyframes for textclip animation */
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Stopwatch Controls */
+#buttonContainer button {
+  font-size: 18px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+#buttonContainer button:hover {
+  transform: translateY(-3px);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+#buttonContainer button:focus {
+  outline: none;
+}
+
+/* Custom class for Reset buttom - Red Color */
+.btn-outline-danger {
+  border-color: #dc3545;  /* Red border color */
+  color: #dc3545;  /* Red text color */
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;  /* Red background on hover */
+  color: white; /* White text on hover */
+}
